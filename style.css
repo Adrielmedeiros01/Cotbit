@@ -7,7 +7,7 @@
 body {
     
     background: linear-gradient(to bottom, #000820, rgb(24, 0, 31));
-    
+    font-family: monospace;
 }
 
 header{
@@ -106,6 +106,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 40%;
+    font-size: 1rem;
     padding: 1rem;
     border-radius: 10px;
     color: white;
