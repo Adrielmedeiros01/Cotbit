@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" /> -->
+    <title>Cotação Bitcoin</title>
+</head>
+
+<style>
+
+  body {
+    background: linear-gradient(to bottom, #000820, rgb(24, 0, 31));
+    
+  }
+  /* Cabecalho: */
+  #cabecalho div{
+    text-align: center;
+    font: bold;
+  }
+  #cabecalho img {
+    border-radius: 100%;
+    width: 70%;
+    /* box-shadow: 5px 5px 5px; */
+    
+  }
+
+/* ========================= */
+
+  #listcotbit{
+    list-style-type: none;
+  }
+   #listcotbit ul{
+    list-style-type: none;
+  }
+  
+  #divcot {
+    border-radius: 2%;
+    border: solid 1px #f4c430; 
+    padding: 1rem; 
+    background-color: #000514;
+    color: white;
+    box-shadow: 5px 5px 10px black;
+  }
+  #divcot h3, a{
+    color: #ffcc00;
+  }
+
+/* ========================= */
+
+  #rev-art {
+    border-radius: 2%; 
+    border: solid 1px #f4c430;
+    padding: 1rem; 
+    background-color: #000514;
+    box-shadow: 5px 5px 10px black;
+  }
+  #rev-art h3{
+    color: #ffcc00;
+  }
+  #rev-art li{
+    list-style-type: disc; 
+    color: #f4c430;
+  }
+  #rev-art a{
+    color: white;
+    text-decoration: none;
+  }
+
+
+/* ========================= */
+  #anuncio {
+    text-align: center;
+  }
+  #anuncio img {
+    width: 70%;
+    height: 250px; 
+    width: "300px"; 
+    height: "200px";
+    text-align: center;
+  }
+/* ========================= */
+
+  #continuapag section{
+    border-radius: 2%;
+    border: solid 1px #f4c430;
+    padding: 1rem; 
+    background-color: #000514;
+    box-shadow: 5px 5px 10px black;
+  }
+  #continuapag h3{
+    color: #ffcc00;
+  }
+  #continuapag ul{
+    list-style-type: none;
+  }
+  #borda {
+    border-radius: 2%;
+    border: solid 1px #f4c430; 
+    padding: 1rem; 
+    background-color: #000514;
+    box-shadow: 5px 5px 10px black;
+  }
+  #borda h4 {
+    color: #ffcc00; 
+    text-align: center;
+  }
+  #imagem-satoshi {
+    margin-top: 2rem; 
+    margin-left: 30%; 
+    width: 40%; 
+    height: 195px;
+    border-radius: 10px;
+    
+  } 
+  #medoganacia {
+    margin-bottom: 2rem; 
+    margin-top: 2rem; 
+    width:100%; 
+    height: 1%; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    font-family:sans-serif; 
+    font-size:14px; 
+    color:#333;
+  }
+  #medoganancia p {
+    color: white;
+    text-align: justify;
+  }
+  /* =================================*/
+  #barra {
+    width: 100%;
+    position: fixed;
+    background-color: #000514;
+    display: flex;
+    box-shadow: 5px 1px 9px  #f4c430;
+
+  }
+
+  #botmenu {
+    color: white;
+    background-color: #000514;
+    padding: 1rem;
+    cursor: pointer;
+    display: block;
+    margin-left: 0;
+    
+  }
+
+  #ul, .li {
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  #ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4.0rem;
+    background-color: #000514;
+    width: 100%;
+  }
+
+  .li{
+    color: white;
+    padding: 0.7rem;
+    text-align: center;
+    margin-right: 2rem;
+    font-weight: bold;
+  
+  }
+
+  .li a {
+    color: white;
+    padding: 0.7rem;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .li a:hover {
+    background-color: #ffcc00;
+    color: #000514;
+    border-radius: 10%;
+  }
+
+  @media screen and (min-width: 768px) {
+
+    #botmenu {
+      display: none;
+    }
+
+    #itens {
+      display: block;
+    }
+
+    #ul {
+      flex-direction: row;
+      margin: 0;
+    }   
+
+  }
+
+  @media screen and (max-width: 768px) {
+
+    #ul {
+        justify-content: center; /* centraliza na horizontal */
+        align-items: center;     /* centraliza na vertical */
+    }
+
+  }
+
+</style>
+
+
+<body onresize="mudoutamanho">
+
+    <header>
+        <div id="barra">
+          <i id="botmenu" class="material-symbols-outlined" onclick="clickMenu()">menu</i>
+          <div id="itens">
+            <ul id="ul">
+                <li class="li"><a href="atual.html"><span class="material-symbols-outlined">home</span>INÍCIO</a></li>
+                <li class="li"><a href="sobre.html"><span class="material-symbols-outlined">currency_bitcoin</span>CONTRIBUIR</a></li>
+                <li class="li"><a href="sobre.html"><span class="material-symbols-outlined">info</span> SOBRE</a></li>
+            </ul>
+          </div>
+        </div>
+    </header>
+    <script>
+
+        const itens = document.getElementById("itens");
+
+        function clickMenu() {
+            if (itens.style.display === "block") {
+                itens.style.display = "none";
+            } else {
+                itens.style.display = "block";
+            }
+        }
+        function mudoutamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = "block";
+            } else {
+                itens.style.display = "none";
+            }
+        }
+
+        window.onload = mudoutamanho;
+        window.onresize = mudoutamanho;
+
+    </script>
+
+
+
+ 
+
+  <br>
+  <main class="container mt-4">
+        <div style="text-align: center; margin-top: 5rem; ">
+            <h1 style="color: #ffcc00; text-shadow: 5px 5px black;">Bem-Vindo ao mundo do Bitcoin!</h1>
+            <p style="color: white;">Acompanhe em tempo real a cotação, notícias e curiosidades sobre a moeda mais famosa do mundo digital.</p>
+            
+        </div>
+        <script>
+        function pegarHorarioAtual() {
+            const agora = new Date();
+            const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+            const diaSemana = diasSemana[agora.getDay()];
+            const dia = agora.getDate().toString().padStart(2, '0');
+            const mes = (agora.getMonth() + 1).toString().padStart(2, '0');
+            const ano = agora.getFullYear();
+            const horas = agora.getHours().toString().padStart(2, '0');
+            const minutos = agora.getMinutes().toString().padStart(2, '0');
+            const segundos = agora.getSeconds().toString().padStart(2, '0');
+            return `${horas}:${minutos}:${segundos} - ${dia}:${mes}:${ano} - ${diaSemana}`;
+        }
+        //=============================================================================================================
+        function atualizarHorario() {
+            const elementoData = document.getElementById('data');
+            document.getElementById("data").style.fontWeight="bold";
+            elementoData.textContent = pegarHorarioAtual();
+        }
+        // Atualiza o horário a cada segundo
+        setInterval(atualizarHorario, 1000);
+        //=============================================================================================================
+        // atualizarHorario(); // Atualiza imediatamente ao carregar
+        //=============================================================================================================
+        async function pegarCotacaoBitcoin() {
+            try {
+            const resposta = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl,usd,eur');
+            const dados = await resposta.json();
+            const brl = dados.bitcoin.brl.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            const usd = dados.bitcoin.usd.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            //const eur = dados.bitcoin.eur.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+            document.getElementById("cotacao").style.fontWeight = "bold";
+            document.getElementById('cotacao').innerHTML =
+                `🇧🇷 BRL: ${brl}<br>
+                🇺🇸 USD: ${usd}`
+            }
+            catch (erro) {
+            document.getElementById('cotacao').textContent = 'Carregando...';
+            console.error(erro);
+            }
+        }
+        // Atualiza a cada 10 segundos
+        pegarCotacaoBitcoin();
+        setInterval(pegarCotacaoBitcoin, 10000);
+        //=============================================================================================================
+        </script>
+    <!--===============================================-->
+    <!--Cabeçalho:-->
+    <br><br>
+    <header id="cabecalho">
+      
+
+       
+    </header>
+    <br><br>
+    <!--===============================================-->  
+    <!--Divisão da página:-->
+    <section class="row">
+      <!--Lado esquerdo da página-->
+      <main class="col-md-8">        
+        <ul id="listcotbit" class="container pt-3 pb-3">      
+          <!--Cotação BITCOIN:-->
+          <div id="divcot">
+            <li> 
+              <h3 class="container"> Data de atualização:</h3>
+              <ul>
+                <li>
+                  <p id="data"></p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3 class="container">Valor da cotação do Bitcoin: </h3>
+              <ul>
+                <li>
+                    <p id="cotacao"></p>
+                </li>
+                <li>                 
+                    <a href="https://www.coingecko.com/">Para mais cotações clique AQUI</a>
+                </li>
+              </ul>
+            </li>
+          </div>  
+          <br>        
+          <!--Links - REVISTAS,ARTIGOS: -->
+          <div id="rev-art">
+            <li style="list-style-type: none;">
+              <h3 class="container">Economia:</h3>
+              <ul>
+                <li><a href="https://economia.uol.com.br/">Revista Uol - Economia</a></li>
+                <li><a href="https://g1.globo.com/economia/">Revista  g1 Globo - Economia</a></li>
+                <li><a href="https://www.cnnbrasil.com.br/economia/">Revista CNN Brasil - Economia</a></li>
+                <li><a href="https://www.estadao.com.br/economia/">Revista Estadão - Economia</a></li>
+                <br>
+              </ul>
+            </li>
+            <li style="list-style-type: none;" >
+              <h3 class="container">Como gerar sua carteira offline:</h3>
+              <ul>
+                <li><a href="https://blog.areabitcoin.com.br/ian-coleman/">Tutorial Ian Coleman - (Leia com atenção!)</a></li>
+                <li><a href="https://github.com/iancoleman/bip39">Ian Coleman (Github)</a></li>              
+                <li><a href="https://www.youtube.com/watch?v=Va42n_wprWA">Tutorial (Blue Walet)</a></li>
+              </ul>
+            </li>
+            <li style="list-style-type: none;">
+              <br>
+              <h3 class="container">Artigos e Livros: </h3>
+              <ul>
+                <li><a href="https://maisliberdade.pt/site/assets/files/2941/hayek_-_o_uso_do_conhecimento_na_sociedade.pdf"> O uso do conhecimento humano na sociedade - (F. Hayek)</a></li>
+                <li><a href="https://www.hayekcollege.com/sites/default/files/ebooks/As%20Seis%20Licoes%20-%20Ludwig%20Von%20Mises.pdf"> As 6 lições - (Von Mises)</a></li>
+                <li><a href="https://explicabitcoin.medium.com/bitcoin-e-os-pobres-911000c41ae2">Bitcoin e os pobres (Mircea popescu)</li></a> 
+                <li><a href="https://rothbardbrasil.com/wp-content/uploads/2022/06/Bitcoin-Red-Pill-_2a-Edicao_-O-Renascimento-Moral_-Material-e-Tecnologico-by-Renato-Amoedo-Nadier-Ro.pdf">Bitcoin Red Pill (Renato Amoedo)</a></li>
+              </ul>
+            </li>
+            <li style="list-style-type: none;">
+              <br>
+              <h3 class="container">Ciência e Tecnologia:</h3>
+              <ul>   
+                <li><a href="">Revista Olhar Digital</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+        
+        <!--Anuncio: -->
+        <div id="anuncio">
+          <a href="https://bipa.app/"><img style="box-shadow: 9px 5px 10px white ;" src="https://bipa.app/bipa-og-image.png"></a>
+        </div>
+        <br>
+        <!--Continuação depois do anuncio:-->
+        <div id="continuapag" class="container">
+          <!-- O que é o BITCOIN: -->
+          <section>
+            <h3 class="container">(What) - O que é o bitcoin:</h3>
+            <ul class="container pb-3">
+              <li>
+                <br>
+                <p style=" color: white; width: 100%; text-align: justify;">
+  <b>Em apenas uma frase:</b> bitcoin (token) é o dinheiro que pode ser
+  enviado por qualquer meio de comunicação e Bitcoin é o sistema
+  público e aberto de registros de seu token nativo e o software 
+  livre para sua utilização pela Internet.
+                </p> 
+                <div style="border-radius: 5px; background-color: black;">
+                  <p style="color: white; text-align: center; padding: 2rem; width: 100%; height: 100%;">
+  "Bitcoin é a comunidade
+  e a comunidade é o Bitcoin."
+  <b>(Mircea Popescu)</b>
+                  </p>            
+                </div>
+              </li>
+            </ul>
+          </section>
+          <br>
+          <!--White Paper:-->
+          <section>
+            <br>
+            <h3 style="color: #ffcc00;" class="container">White Paper - (Clique na imagem para acessar):</h3>
+            <br>
+            <div style="text-align: center;">         
+              <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_pt_br.pdf"><img style="width: 80%; margin:1rem; border-radius: 5px;" src="https://coingeek.com/wp-content/uploads/2020/10/theory-of-bitcoin-covers-the-bitcoin-whitepaper-line-by-line.jpg" alt=""></a>
+              <br><br>
+            </div>
+            <br>
+            <div style="color: white; text-align: justify;">
+              <p>
+                  O white paper do Bitcoin é um documento técnico que descreve os fundamentos e o funcionamento
+                  do sistema de dinheiro eletrônico peer-to-peer proposto por Satoshi Nakamoto. Foi publicado em 
+                  2008 e serve como a base para a criação da criptomoeda Bitcoin e da tecnologia blockchain. 
+                  O white paper detalha como o Bitcoin funciona, incluindo a geração de novos bitcoins, a 
+                  segurança das transações, o consenso da rede e a estrutura do sistema blockchain. 
+              </p>
+              <p>
+                <b>Autor:</b> Foi escrito por Satoshi Nakamoto, um pseudônimo que representa a entidade anônima que lançou o Bitcoin. 
+              </p>
+              <p>
+                <b>Importância:</b> O white paper é essencial para entender a proposta de valor do Bitcoin e a tecnologia blockchain, fornecendo informações técnicas e econômicas sobre o projeto. 
+              </p>
+              <p>
+                <b>Disponibilidade:</b> O white paper está disponível para leitura online e download em vários sites, como o <a href="https://bitcoin.org/en/">Bitcoin.org</a>. 
+              </p>
+              <p>
+                <b>Objetivo:</b> O white paper visa explicar o conceito de dinheiro eletrônico descentralizado e como o Bitcoin pode funcionar como uma alternativa aos sistemas bancários tradicionais. 
+              </p>
+              <p>
+                <b>Transparência:</b> O documento demonstra a transparência do projeto e permite que investidores, mineradores e usuários compreendam melhor a proposta de valor do Bitcoin. 
+              </p>
+              <p>
+                <b>Fundamentação:</b> O white paper serve como a base técnica e econômica para a criação do Bitcoin e da tecnologia blockchain. 
+              </p>
+            
+            </div>
+          </section>
+          <br>
+        </div>  
+      </main>
+      <!--Lado direito da página-->
+      <main class="col-md-4">
+        <br>
+        <div id="borda" >
+            <a href="https://www.mb.com.br/economia-digital/comece-por-aqui/satoshi-nakamoto/"><img id="imagem-satoshi" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZzTrcKmTU3AmuAbT1NEMBl6RR1m2wl2NDQ&s" alt="erro"></a>
+            <br><br>
+          <h4>Quem é Satoshi Nakamoto?</h4>
+          <br>
+          <iframe style="width: 100%;" width="270" height="215" src="https://www.youtube.com/embed/4oq96jMDZvk?si=r98f_QFuhmrDkEf5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br><hr><br>
+        <div id="borda">
+          <br>
+          <h4>Índice de medo e ganância:</h4>       
+          <div id="medoganancia">
+            <script async src="https://static.coinstats.app/widgets/v5/cs-widget.js" ></script>
+            <fear-and-greed theme="dark"
+              direction="horizontal"
+              background="#0D0D0D"
+              style="width: 100%;"
+              is-market-sentiment-visible="true"
+              is-last-updated-visible="true"
+              title-color="#FFFFFF"
+              chart-indicator-one-color="#F02935"
+              chart-indicator-two-color="#F07D29"
+              chart-indicator-three-color="#9ACB82"
+              chart-indicator-four-color="#34B349"
+              subtitle-color="#999999"
+              last-updated-color="#999999"
+              arrow-color="#262626">
+            </fear-and-greed>
+            <br>
+            <p>O Índice de Medo e Ganância do Bitcoin é uma ferramenta que mede o sentimento do mercado de criptomoedas,
+              especificamente em relação ao Bitcoin, indicando se os investidores estão excessivamente temerosos ou gananciosos.
+              Ele varia de 0 a 100, onde 0 representa medo extremo e 100 representa ganância extrema. O índice é calculado com base
+              em diversos fatores, como volatilidade, volume de negociação, atividade nas redes sociais e dominância do Bitcoin.</p>
+          </div>
+        </div>
+        <br><hr><br>
+        <div id="borda">
+          <br>
+          <h4>Inflação para leigos:</h4>
+          <iframe style="padding-top: 2rem; width: 100%; height: 300px; " src="https://www.youtube.com/embed/w_xLwYBgpLU?si=dCmeoREJXFAtIKGh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br><hr><br>
+        <div id="borda">
+          <br>
+          <h4>Comprar BTC sem corretora</h4>
+          <iframe style="padding-top: 2rem; width: 100%; height: 300px;" src="https://www.youtube.com/embed/6OcYr_hLzHQ?si=vwCHefGLjIwNSC9Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <hr>
+      </main>
+    
+    </section>
+    <!--==================10 mandamentos===================-->
+    <section>
+      <br><br><br><br><br>
+      <h4 style="color: #ffcc00;;" class="text-center">Os 10 Mandamentos do Bitcoin</h4>
+      <br>
+      <pre style="box-shadow: 5px 5px 5px #ffcc00; border-radius: 3%; padding: 1rem; background-color: #111; color: white;">
+1.  <b>(Nem suas chaves - nem seus bitcoins) -</b>  Se você não possui as chaves para acessar o blockchain, então você não possui criptografia, mas simplesmente confia no serviço.
+2.  <b>(Não revele a ninguém quanto dinheiro Bitcoin você possui) -</b>  Os Bitcoins adoram o silêncio. Não se torne alvo de golpistas e hackers.  
+3.  <b>(HODL! Isto não se aplica aos comerciantes – apenas aos investidores) -</b> Ao comprar Bitcoin, você deve estar ciente de que seu preço pode oscilar bastante. Mantenha suas emoções sob controle e não venda.  
+4.  <b>(Somente o Bitcoin é Importante) -</b> Os maximalistas do Bitcoin acreditam apenas no Bitcoin – porque é uma invenção única que difere das criptomoedas que vieram depois.  
+5.  <b>(Sua frase-semente é sua chave) -</b> Uma frase-semente é uma lista de palavras que armazena todas as informações necessárias para acessar seus bitcoins no blockchain. Mantenha-a segura. 
+6.  <b>(Se algo parece uma farsa, é uma farsa) -</b> Se algo parece bom demais para ser verdade, é uma farsa. Ninguém está distribuindo bitcoins assim. Não seja ingênuo.  
+7.  <b>(Verifique os endereços corretos diversas vezes) -</b> Se você fizer uma transação com um endereço incorreto na rede Bitcoin, você corre o risco de perder as moedas que foram enviadas durante essa transação. 
+8.  <b>(Compre bitcoins apenas com os fundos que você pode perder) -</b> A regra de ouro do investimento – esteja preparado para perder o que você investiu. Não compre morcegos com o último dinheiro.  
+9.  <b>(Tome suas próprias decisões) -</b> Ouça as autoridades, mas não as siga cegamente – afinal, cabe a você tomar suas próprias decisões de investimento.  
+10. <b>(Acumule mais BTC) -</b> O Bitcoin  tem uma vantagem incrível sobre o ouro: cada unidade do Bitcoin é divisível com oito casas decimais. Você sempre pode comprar mais satoshi – você terá um grande capital.
+      </pre>
+    </section>
+    <!--===============================================-->
+    <br>
+    <!-- Caixa de comentários: -->
+    <div style="background-color: white;">
+      <div class="commentbox"></div>
+      <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+      <script>commentBox('5703677973102592-proj')</script>
+    </div> 
+    <!--Rodapé:-->
+    <footer>
+      <hr>
+      <p style="color: white; text-align: center; padding: 3rem;"><b>&copy;Copyright</b></p>
+      <hr>
+    </footer>
+    <!--===============================================-->
+  </main>
+</body>
+</html>
