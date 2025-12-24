@@ -1,0 +1,36 @@
+@media screen and (max-width: 730px){
+
+
+    .medoegan {
+        flex-direction: column;
+    }
+
+    .cotacao{
+        flex-direction: column;
+        height: auto;
+        background-repeat: no-repeat;
+    }
+
+    .cotacao img {
+        width: 100%;
+    }
+
+    .cA{
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    .cB{
+        display: none;
+    }
+
+    .lA {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .lB{
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
