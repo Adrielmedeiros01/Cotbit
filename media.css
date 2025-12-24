@@ -34,8 +34,8 @@
     }
 
     .lB{
-        margin-top: 1rem;
         width: 100%;
+        margin: 0 auto;
         text-align: justify;
     }
 }
