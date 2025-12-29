@@ -14,7 +14,8 @@ body {
 header{
     background-color: #000514;
     position: fixed;
-    justify-content: end;
+    padding: 10px;
+    justify-content: start;
     height: 4rem;
     display: flex;
     align-items: center;
@@ -25,7 +26,10 @@ header{
     color: white;
 }
 
+
+
 #logo{
+    margin-right: 2px;
     width: 4%;
 }
 
