@@ -83,8 +83,6 @@ main {
 }
 
 .cB img{
-
-    box-shadow:  5px 5px 15px;
     width: 50%;
     border-radius: 100%;
 }
@@ -118,8 +116,23 @@ main {
  
 }
 
+.wp {
+    width: 50%;
+    margin-left: 2rem;
+    display: flex;
+    border-radius: 10px;
+    background-color: white;
+}
 
-
+.wB {
+    width: 60%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+ 
+  
+}
 footer {
     text-align: center;
     width: 100%;
