@@ -134,8 +134,9 @@ main {
   
 }
 footer {
+    background-color: black;
     text-align: center;
     width: 100%;
-    color: white;
+    color: gold;
     padding: 2rem;
 }
