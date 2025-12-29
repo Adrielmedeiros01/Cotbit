@@ -6,7 +6,7 @@
     }
 
     .cotacao{
-        flex-direction: column;
+        /* flex-direction: column; */
         height: auto;
         background-repeat: no-repeat;
     }
@@ -20,8 +20,12 @@
         font-size: 15px;
     }
 
-    .cB{
-        display: none;
+    .cB {
+        width: 30%;
+    }
+
+    .cB img{
+        width: 100%;
     }
 
     .medoegan {
