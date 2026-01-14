@@ -1,6 +1,12 @@
 @media screen and (max-width: 730px){
 
 
+    #logo{
+        margin-right: 2px;
+        width: 8%;
+    }
+
+
     .medoegan {
         flex-direction: column;
     }
