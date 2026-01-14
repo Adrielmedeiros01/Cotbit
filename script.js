@@ -30,15 +30,32 @@ async function pegarCotacaoBitcoin() {
         const usd = dados.bitcoin.usd.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
         document.getElementById("cotacao").style.fontWeight = "bold";
         document.getElementById('cotacao').innerHTML =
-            `BRL: ${brl}<br>
-             USD: ${usd}`
+            ` BRL: ${brl}<br>
+              USD: ${usd}`
     }
     catch (erro) {
         document.getElementById('cotacao').textContent = 'Carregando...';
         console.error(erro);
     }
 }
+async function pegarCotacaoBitcoin2() {
+    try {
+        const resposta = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl,usd,eur');
+        const dados = await resposta.json();
+        const usd = dados.bitcoin.usd.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        document.getElementById("cotacaoD").style.fontWeight = "normal";
+        document.getElementById('cotacaoD').innerHTML =
+            `${usd}`
+    }
+    catch (erro) {
+        document.getElementById('cotacaoD').textContent = 'Carregando...';
+        document.getElementById('cotacaoD').style.color = "white";
+        console.error(erro);
+    }
+}
 // Atualiza a cada 10 segundos
 pegarCotacaoBitcoin();
 setInterval(pegarCotacaoBitcoin, 10000);
+pegarCotacaoBitcoin2()
+setInterval(pegarCotacaoBitcoin2, 10000);
 //=============================================================================================================
