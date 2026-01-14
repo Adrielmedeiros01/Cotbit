@@ -5,8 +5,8 @@
 }
 
 body {
-    
-    background: linear-gradient(to bottom, #000820, rgb(24, 0, 31));
+    background-color: #000820;
+    /* background: linear-gradient(to bottom, #000820, rgb(24, 0, 31)); */
     background-repeat: no-repeat;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -93,11 +93,13 @@ main {
 
 .medoegan {
     display: flex;
-    width: 100%;
+    width: 90%;
     padding: 1rem;
+    border: grey solid 1px;
     margin: 0 auto;
-    /* border: solid; */
-    border-radius: 10px;
+    border-radius: 5px;
+    background-color: #000514;
+    padding: 1rem;
 
 
 }
