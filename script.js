@@ -14,7 +14,7 @@ function pegarHorarioAtual() {
 //=============================================================================================================
 function atualizarHorario() {
     const elementoData = document.getElementById('data');
-    document.getElementById("data").style.fontWeight = "bold";
+    document.getElementById("data").style.fontWeight = "normal";
     elementoData.textContent = pegarHorarioAtual();
 }
 // Atualiza o horário a cada segundo
