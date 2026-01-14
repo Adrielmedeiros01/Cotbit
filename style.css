@@ -6,7 +6,7 @@
 
 body {
     background-color: #000820;
-
+    /* background: linear-gradient(to bottom, #000820, rgb(24, 0, 31)); */
     background-repeat: no-repeat;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -15,7 +15,7 @@ header{
     background-color: #000514;
     position: fixed;
     padding: 10px;
-    justify-content: start;
+    justify-content: space-between;
     height: 4rem;
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@ header{
 
 #logo{
     margin-right: 2px;
-    width: 4%;
+    width: 6%;
 }
 
 nav {
@@ -93,12 +93,12 @@ main {
 
 .medoegan {
     display: flex;
-    width: 80%;
+    width: 90%;
     padding: 1rem;
     border: grey solid 1px;
     margin: 0 auto;
     border-radius: 5px;
-    background-color: #000514;
+    background-color: transparent;
     padding: 1rem;
 
 
