@@ -6,9 +6,7 @@
 
 body {
     background-color: #000820;
-    /* background: linear-gradient(to bottom, #000820, rgb(24, 0, 31)); */
     background-repeat: no-repeat;
-    height: 100dvh;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -151,9 +149,13 @@ main {
     border-radius: 10px;
     border: solid 1px grey;
     transition: 0.8s;
+    background-color: #000514;
     box-shadow: 5px 5px 5px #000514;
-       background-color: #000514;
+    margin-bottom: 1.5rem;
+}
 
+.card img {
+    width: 80%;
 }
 
 .card h3 {
@@ -200,7 +202,6 @@ main {
 
 
 footer {
-    background-color: #000514;
     text-align: center;
     width: 100%;
     color: orange;
