@@ -46,7 +46,8 @@ main {
     margin: 0 auto;
     padding: 1rem;
     margin-top: 5rem;
-    box-shadow: 10px 10px 100px blue;
+    filter: drop-shadow(1px 1px 20px blue);
+    /* box-shadow: 10px 10px 100px blue; */
     background-image: linear-gradient(90deg,rgb(2, 1, 24) 0%, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);;
     align-items: center;
     border: 1px solid grey;
@@ -134,23 +135,36 @@ main {
 }
 
 
+.titlelib {
+    background-image: url(https://png.pngtree.com/background/20230527/original/pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg);
+    color: white;
+    padding: 3rem;
+    width: 100%;
+    margin: 0 auto ;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    text-align: center;
+}
+
 .biblioteca {
     display: flex;
-    width: 90%;
+    width: 100%;
+    padding: 1rem;
     margin: 0 auto;
     color: white;
-
+    /* background-image: url(https://t3.ftcdn.net/jpg/16/04/14/82/360_F_1604148251_s1d1TvCNbybMU0OvgrvWBBPAGLAg35yY.jpg); */
+    background-image: url(https://png.pngtree.com/background/20230527/original/pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg);
+   
 }
 
 .card {
     margin: 0 auto;
     width: 30%;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 10px;
     border: solid 1px grey;
     transition: 0.8s;
     background-color: #000514;
-    box-shadow: 5px 5px 5px #000514;
+    box-shadow: 5px 5px 5px rgb(44, 12, 12);
     margin-bottom: 1.5rem;
 }
 
