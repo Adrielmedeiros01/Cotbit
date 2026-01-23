@@ -63,4 +63,13 @@
     .card a {
         font-size: 10px;
     }
+
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer #icones {
+        margin-top: 20px;
+    }
 }
