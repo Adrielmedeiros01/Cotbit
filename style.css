@@ -25,6 +25,28 @@ header{
     opacity: 95%;
     color: white;
     border-bottom: 1px solid rgb(238, 199, 127);
+    cursor: pointer;
+}
+
+header nav li {
+    display: inline;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
+nav li:hover, a:hover {
+    background-color: white;
+    color: #000514;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+nav a {
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
 }
 
 #logo{
